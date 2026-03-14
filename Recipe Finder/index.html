@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Recipe Finder - Ultimate Cooking Companion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="data:application/manifest+json,{
+        'name': 'Recipe Finder',
+        'short_name': 'Recipes',
+        'icons': [{'src': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiBmaWxsPSIjRkY0RDZFIiByeD0iMjQiLz4KPHBhdGggZD0iTTEyMCAxMjBDMTIwIDEzMi44NzMgMTA1Ljg3MyAxNDcgOTEuMTcxNiAxNDdDNS4yNzA4IDE0NyAyIDExOS43MyAyIDkxLjE3MTYgMiAyLjI3MDgzIDUuMjcwODIgMCA5MS4xNzE2IDBDMTc3LjczIDAgMTg1IDcuMjcwODMgMTg1IDkxLjE3MTZDMjE1IDExOS43MyAyMDggMTMyLjg3MyAxOTIgMTQ3WiIgZmlsbD0iI0ZGQjFDMSIvPgo8cGF0aCBkPSJNNC4zMzMzIDUxLjMzMzNDNC4zMzMzIDY5LjY2NjcgMTguNjY2NyA4NCAzNyAxMTRDMzcuMTY2NyAxMTQuMTY3IDM3LjMzMzMgMTE0LjMzMyAzNy41IDExNEMzNy42NjY3IDExNC42NjcgMzcuODMzMyAxMTQuODMzIDM4IDExNUMzOC4xNjY3IDExNS4xNjcgMzguMzMzMyAxMTUuMzMzIDM4LjUgMTE1LjVDMzguNjY2NyAxMTUuNjY3IDM4LjgzMzMgMTE1LjgzMyAzOSAxMTZDMzkuMTY2NyAxMTYuMTY3IDM5LjMzMzMgMTE2LjMzMyAzOS41IDExNkMzOS42NjY3IDExNi42NjcgMzkuODMzMyAxMTYuODMzIDQwIDExN0M0MC4xNjY3IDExNy4xNjcgNDAuMzMzMyAxMTcuMzMzIDQwLjUgMTE3LjVDNDAuNjY2NyAxMTcuNjY3IDQwLjgzMzMgMTE3LjgzMyA0MSAxMThDNDguMzMzMyAxMjUuMzMzIDU2LjY2NjcgMTI5LjY2NyA2NSAxMzBDNzMuMzMzMyAxMzAuMzMzIDgyLjY2NjcgMTI5LjY2NyA5MSAxMjBDOTkuMzMzMyAxMTkuNjY3IDEwOC42NjcgMTE1LjMzMyAxMTYgMTA4QzEyMy4zMzMgMTAwLjY2NyAxMzEuNjY3IDk2LjMzMzMgMTQwIDkyQzE0OC4zMzMgODcuNjY2NyAxNTYuNjY2NyA4My4zMzMzIDE2NSAxODBDMTczLjMzMyA3Ni42NjY3IDE4MS42NjcgNzIuMzMzMyAxOTAgNjhDMjAyLjMzMyA1OS42NjY3IDIxMC42NjcgNTUuMzMzMyAyMTkgNTBDMjMxLjMzMyA0NC42NjY3IDIzOS42NjcgNDAuMzMzMyAyNDggMzZDMjU2LjMzMyAyNy42NjY3IDI2NC42NjcgMjMuMzMzMyAyNzMgMThDMjgxLjMzMyAxMi42NjY3IDI4OS42NjcgOC4zMzMzIDI5OCAyQzMwNi4zMzMgLTMuNjY2NyAzMTQuNjY3IC0xLjMzMzMgMzIzIDdDMzMxLjMzMyAxNS42NjY3IDMzOS42NjcgMTkuOTk5OSAzNDggMjRDMzU2LjMzMyAyOC4zMzMzIDM2NC42NjcgMzIuNjY2NyAzNzMgMzcKQzM4MS4zMzMgNDEuMzMzMyAzODkuNjY3IDQ1LjY2NjcgMzk4IDUwQzQwNi4zMzMgNTQuMzMzMyA0MTQuNjY3IDU4LjY2NjcgNDIzIDYzQzQzMS4zMzMgNjcuMzMzMyA0MzkuNjY3IDcxLjY2NjcgNDQ4IDc2QzQ1Ni4zMzMgODAuMzMzMyA0NjQuNjY3IDg0LjY2NjcgNDczIDg5QzQ4MS4zMzMgOTMuNjY2NyA0ODkuNjY3IDk4IDQ5OCAxMDNDNTA2LjMzMyAxMDguMzMzIDUxNC42NjcgMTEzLjY2NyA1MjMgMTE4QzUzMS4zMzMgMTIyLjMzMyA1MzkuNjY3IDEyNi42NjcgNTQ4IDEzMUM1NTYuMzMzIDEzNS4zMzMgNTY0LjY2NyAxMzkuNjY3IDU3MyAxNDRDNDUgMTQ0IDQ1IDE0NCA0NSAxNDRaIiBmaWxsPSIjRkY0RDZFIi8+Cjwvc3ZnPgo=', 'sizes': '192x192', 'type': 'image/svg+xml'}],
+        'theme_color': '#FF4D6D',
+        'background_color': '#FFF0F3',
+        'display': 'standalone'
+    }">
+   
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <h1><i class="fas fa-utensils" aria-hidden="true"></i> Recipe Finder</h1>
+            <p>Discover mouthwatering recipes from around the world with stunning visuals ✨</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section" role="search">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput"
+                    placeholder="🔍 Search recipes... Try 'Butter Chicken', 'Pizza Margherita', 'Sushi', 'Pasta'..."
+                    autocomplete="off"
+                    aria-label="Search for recipes"
+                >
+                <button class="search-btn" id="searchBtn" aria-label="Search recipes">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Recipes Container -->
+        <main id="recipesContainer" role="main" aria-live="polite"></main>
+    </div>
+
+    <!-- Recipe Modal -->
+    <div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close" id="modalClose" aria-label="Close recipe modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="" loading="lazy">
+                <div class="ingredients-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-list-ul" aria-hidden="true"></i> Ingredients
+                    </h3>
+                    <div class="ingredients-list" id="modalIngredients" role="list"></div>
+                </div>
+                <div class="instructions-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-concierge-bell" aria-hidden="true"></i> Instructions
+                    </h3>
+                    <div class="instructions" id="modalInstructions" role="document"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Custom JS -->
+     <script src="script.js"></script>
+</body>
+</html>
