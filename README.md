@@ -58,7 +58,7 @@ Responsive Web Design
 Working with External APIs
 
 # Screenshot
-![picture](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshot.png)
+![Hero Shot](https://raw.githubusercontent.com/mmAS13/Recipe-Finder/main/screenshot.png)
 
 # API Used
 
