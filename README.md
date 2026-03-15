@@ -57,6 +57,9 @@ Dynamic UI Rendering
 Responsive Web Design
 Working with External APIs
 
+# Screenshot
+![picture](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshot.png)
+
 # API Used
 
 This project uses the free public API:
