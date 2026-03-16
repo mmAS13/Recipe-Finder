@@ -57,9 +57,6 @@ Dynamic UI Rendering
 Responsive Web Design
 Working with External APIs
 
-# Screenshot
-![Screenshot](https://raw.githubusercontent.com/mmAS13/Recipe-Finder/main/screenshot.png?v=1)
-
 
 # API Used
 
