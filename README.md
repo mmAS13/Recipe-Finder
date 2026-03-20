@@ -72,6 +72,9 @@ Add favorite recipes feature
 Add dark mode
 Improve animations and UI interactions
 
+# View Live
+https://recipeefinderproject.netlify.app/
+
 # Author
 
 Marium Memon
